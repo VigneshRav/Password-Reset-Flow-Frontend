@@ -1,9 +1,26 @@
 import React from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Register from "./Pages/Register";
+import Login from "./Pages/Login";
+import ForgotPassword from "./Pages/ForgotPassword";
+import ResetPassword from "./Pages/ResetPassword";
+import PageNotFound from "./Pages/PageNotFound";
 
 const App = () => {
   return (
     <div>
-      <h1 className="text-5xl text-green-600">Hello World!</h1>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Register />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/forgot-password" element={<ForgotPassword />} />
+          <Route
+            path="/reset-password/:id/:token"
+            element={<ResetPassword />}
+          />
+          <Route path="*" element={<PageNotFound />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 };
