@@ -16,7 +16,7 @@ const Login = ({ setToken }) => {
 
     try {
       const res = await axios.post(
-        "https://node-back-l6rl.onrender.com/api/auth/login",
+        "https://password-reset-flow-backend-uj3q.onrender.com/api/user/login",
         payload
       );
       if (res.status === 200 || res.status === 201) {

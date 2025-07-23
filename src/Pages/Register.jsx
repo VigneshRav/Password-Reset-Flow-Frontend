@@ -16,7 +16,7 @@ const Register = () => {
 
     try {
       const res = await axios.post(
-        "https://node-back-l6rl.onrender.com/api/auth/register",
+        "https://password-reset-flow-backend-uj3q.onrender.com/api/user/register",
         payload
       );
       if (res.status === 200 || res.status === 201) {

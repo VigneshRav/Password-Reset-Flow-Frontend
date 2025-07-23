@@ -13,7 +13,7 @@ const ForgotPassword = () => {
 
     try {
       const res = await axios.post(
-        "https://node-back-l6rl.onrender.com/api/auth/forgot-password",
+        "https://password-reset-flow-backend-uj3q.onrender.com/api/user/forgot-password",
         { email }
       );
       if (res.status === 200 || res.status === 201) {
