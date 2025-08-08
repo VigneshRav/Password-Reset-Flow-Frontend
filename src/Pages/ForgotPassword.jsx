@@ -1,61 +1,52 @@
 import axios from "axios";
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import "react-toastify/ReactToastify.css";
 
 const ForgotPassword = () => {
   const [email, setEmail] = useState("");
   const navigate = useNavigate();
-
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    try {
-      const res = await axios.post(
+    await axios
+      .post(
         "https://password-reset-flow-backend-uj3q.onrender.com/api/user/forgot-password",
         { email }
-      );
-      if (res.status === 200 || res.status === 201) {
-        toast.success(res.data.message),
-          navigate("/login"),
-          {
-            position: "top-center",
-          };
-      } else {
-        toast.error("Registration Failed!", {
-          position: "top-center",
-        });
-      }
-    } catch (error) {
-      toast.error(error.response?.data?.message || "Something went wrong!", {
-        position: "top-center",
+      )
+      //to handle response and errors
+      .then((res) => {
+        toast.success(res.data.message);
+        navigate("/login");
+      })
+      .catch((error) => {
+        console.log(error);
+        toast.error(error.response.data.message);
       });
-    }
   };
   return (
-    <div className="min-h-screen flex items-center justify-center bg-blue-100">
-      <div className="bg-white p-8 rounded shadow-md w-full max-w-md">
-        <form onSubmit={handleSubmit}>
-          <div className="mb-4">
-            <label
-              htmlFor="email"
-              className="block text-gray-700 font-bold mb-2"
-            >
-              Email Id
-            </label>
+    <div className="container vh-100 mw-100 d-flex justify-content-center align-content-center border bg-primary-subtle">
+      <div className=" d-flex h-75 w-75 flex-column  justify-content-center shadow-sm  my-auto border rounded-3 bg-white">
+        <form
+          onSubmit={handleSubmit}
+          className="container d-grid justify-content-center"
+        >
+          <p className="d-flex flex-column text-danger ">
+            <label htmlFor="email">Email</label>
             <input
               type="email"
+              name="email"
               id="email"
-              className="w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
-              placeholder="Enter Your Email Id"
+              placeholder="Enter your Email Id"
               required
+              value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
-          </div>
+          </p>
+          <br />
           <button
             type="submit"
-            className="w-full bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition"
+            className="border bg-danger text-white rounded-2 p-2"
           >
             Send
           </button>

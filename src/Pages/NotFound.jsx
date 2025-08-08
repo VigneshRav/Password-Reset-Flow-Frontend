@@ -4,15 +4,15 @@ import { Link } from "react-router-dom";
 
 const NotFound = () => {
   return (
-    <div className="flex flex-col items-center justify-center h-screen text-center">
+    <div className="">
       <img
-        className="h-90"
+        className=""
         src="https://media.istockphoto.com/id/860463522/vector/404-error-page-template-for-website-404-alert-flat-design.jpg?s=612x612&w=0&k=20&c=ad0D5cQqnRMRcyQtaFdrk4GgO9LYRYl06V4MReZKsOE="
         alt="Page Not Found"
       />
       <Link
         to="/"
-        className="mt-6 px-6 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+        className="mx-auto"
       >
         <button>Go Back Home</button>
       </Link>
