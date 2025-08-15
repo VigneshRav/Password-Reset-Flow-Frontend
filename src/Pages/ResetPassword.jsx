@@ -27,16 +27,17 @@ const ResetPassword = () => {
       });
   };
   return (
-    <div className="container vh-100 mw-100 d-flex justify-content-center align-content-center  border bg-primary-subtle">
+    <div className="container vh-100 mw-100 d-flex justify-content-center align-content-center  border bg-warning">
       <div className=" d-flex h-75 w-75 flex-column  justify-content-center shadow-sm  my-auto border rounded-3 bg-white">
         <form
           onSubmit={handleSubmit}
           className="container d-grid justify-content-center"
         >
-          <p className="d-flex flex-column text-danger">
+          <p className="d-flex flex-column text-primary">
             <label htmlFor="password">New password</label>
             <span className="d-flex justify-content-between">
               <input
+                className="border border-danger rounded p-2"
                 type={showPassword ? "text" : "password"}
                 name="password"
                 id="password"
@@ -82,7 +83,7 @@ const ResetPassword = () => {
             <br />
             <button
               type="submit"
-              className="border bg-danger text-white rounded-2 p-2"
+              className="border bg-primary text-white rounded-5 p-2"
             >
               Update Password
             </button>

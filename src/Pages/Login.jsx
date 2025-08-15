@@ -32,13 +32,13 @@ const Login = ({ setToken }) => {
     setPassword("");
   };
   return (
-    <div className="container vh-100 mw-100 d-flex justify-content-center align-content-center border bg-primary-subtle">
-      <div className=" d-flex  h-75 w-75   flex-column  justify-content-center my-auto py-2 border rounded-3 bg-danger">
-        <span className=" display-6 ">Don't Have an account ?</span>
+    <div className="container vh-100 mw-100 d-flex justify-content-center align-content-center border bg-warning">
+      <div className=" d-flex  h-75 w-75   flex-column  justify-content-center my-auto py-2 border rounded-3 bg-primary">
+        <span className=" display-6 text-center">Don't Have an account ?</span>
         <button className=" container justify-content-center border-0 px-2 bg-transparent ">
           <Link to={"/"} className="text-muted text-decoration-none">
             <p>
-              click here
+              click here to{" "}
               <span className=" text-white text-decoration-underline">
                 Register
               </span>
@@ -51,9 +51,10 @@ const Login = ({ setToken }) => {
           onSubmit={handleSubmit}
           className="container d-grid justify-content-center"
         >
-          <p className="d-flex flex-column text-danger">
+          <p className="d-flex flex-column text-primary">
             <label htmlFor="email">Email</label>
             <input
+              className="border border-danger rounded p-2"
               type="email"
               name="email"
               id="email"
@@ -64,10 +65,11 @@ const Login = ({ setToken }) => {
             />
           </p>
           <br />
-          <p className="d-flex flex-column text-danger">
+          <p className="d-flex flex-column text-primary">
             <label htmlFor="password">Password</label>
             <span className="d-flex justify-content-between">
               <input
+                className="border border-danger rounded p-2"
                 type={showPassword ? "text" : "password"}
                 name="password"
                 id="password"
@@ -122,7 +124,7 @@ const Login = ({ setToken }) => {
           <br />
           <button
             type="submit"
-            className="d-flex m-2 p-2 w-50  rounded-2  border shadow-sm bg-danger text-white justify-content-center"
+            className="d-flex m-2 p-2 w-50  rounded-5  border shadow-sm bg-primary text-white justify-content-center"
           >
             Login
           </button>

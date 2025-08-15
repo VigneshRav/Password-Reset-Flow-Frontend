@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import "react-toastify/ReactToastify.css";
+import { Link } from "react-router-dom";
 
 const ForgotPassword = () => {
   const [email, setEmail] = useState("");
@@ -25,15 +26,16 @@ const ForgotPassword = () => {
       });
   };
   return (
-    <div className="container vh-100 mw-100 d-flex justify-content-center align-content-center  border border-2 bg-primary-subtle">
+    <div className="container vh-100 mw-100 d-flex justify-content-center align-content-center  border border-2 bg-warning">
       <div className=" d-flex h-75 w-75 flex-column  justify-content-center shadow-sm  my-auto border-2 border rounded-3 bg-white">
         <form
           onSubmit={handleSubmit}
           className="container d-grid justify-content-center"
         >
-          <p className="d-flex flex-column text-danger ">
+          <p className="d-flex flex-column text-primary">
             <label htmlFor="email">Email</label>
             <input
+              className="border border-danger rounded p-2"
               type="email"
               name="email"
               id="email"
@@ -46,9 +48,9 @@ const ForgotPassword = () => {
           <br />
           <button
             type="submit"
-            className="border bg-danger text-white rounded-2 p-2"
+            className="border bg-primary text-white rounded-5 p-2"
           >
-            Send
+            Send Email
           </button>
         </form>
       </div>

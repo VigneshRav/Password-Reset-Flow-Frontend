@@ -31,15 +31,16 @@ const Register = () => {
     setPassword("");
   };
   return (
-    <div className="container vh-100 mw-100 d-flex justify-content-center   border bg-secondary bg-opacity-75 ">
+    <div className="container vh-100 mw-100 d-flex justify-content-center border bg-warning bg-opacity-70 ">
       <div className=" d-flex  h-75 w-75   flex-column  justify-content-center my-auto py-2 border rounded-3 bg-white">
         <form
           onSubmit={handleSubmit}
           className=" container d-grid justify-content-center"
         >
-          <p className="d-flex flex-column text-danger">
+          <p className="d-flex flex-column text-primary">
             <label htmlFor="username">Name</label>
             <input
+              className="border border-danger rounded p-2"
               type="text"
               name="username"
               id="username"
@@ -50,9 +51,10 @@ const Register = () => {
             />
           </p>
           <br />
-          <p className="d-flex flex-column text-danger">
+          <p className="d-flex flex-column text-primary">
             <label htmlFor="email">Email</label>
             <input
+              className="border border-danger rounded p-2"
               type="email"
               name="email"
               id="email"
@@ -63,10 +65,11 @@ const Register = () => {
             />
           </p>
           <br />
-          <p className="d-flex flex-column text-danger ">
+          <p className="d-flex flex-column text-primary">
             <label htmlFor="password">Password</label>
             <span>
               <input
+                className="border border-danger rounded p-2"
                 type={showPassword ? "text" : "password"}
                 name="password"
                 id="password"
@@ -113,18 +116,18 @@ const Register = () => {
           <br />
           <button
             type="submit"
-            className="d-flex m-2 p-2 rounded-2 border shadow-sm bg-danger text-white justify-content-center"
+            className="d-flex m-2 p-2 rounded-5 border shadow-sm bg-primary text-white justify-content-center"
           >
             Register
           </button>
         </form>
       </div>
-      <div className=" d-flex  h-75 w-75   flex-column  justify-content-center my-auto py-2 border rounded-3 bg-secondary-subtle">
-        <span className=" display-6 ">Already Have an account ?</span>
+      <div className=" d-flex  h-75 w-75   flex-column  justify-content-center my-auto py-2 border rounded-3 bg-primary">
+        <span className=" display-6 text-center ">Already Have an account ?</span>
         <button className=" container justify-content-center border-0 px-2 bg-transparent ">
           <Link to={"/login"} className="text-muted text-decoration-none ">
             <p>
-              click here{" "}
+              click here to{" "}
               <span className=" text-white text-decoration-underline">
                 Login
               </span>
