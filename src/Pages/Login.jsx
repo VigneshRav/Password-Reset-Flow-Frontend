@@ -14,7 +14,7 @@ const Login = ({ setToken }) => {
     const payload = { email, password };
     await axios
       .post(
-        "https://password-reset-flow-backend-uj3q.onrender.com/api/user/login",
+        "https://password-reset-flow-backend-uj3q.onrender.com/api/auth/login",
         payload
       )
       //to handle response and errors

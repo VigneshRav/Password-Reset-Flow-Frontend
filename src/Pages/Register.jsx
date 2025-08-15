@@ -15,7 +15,7 @@ const Register = () => {
     const payload = { username, email, password };
     await axios
       .post(
-        "https://password-reset-flow-backend-uj3q.onrender.com/api/user/register",
+        "https://password-reset-flow-backend-uj3q.onrender.com/api/auth/register",
         payload
       )
       .then((res) => {
@@ -23,7 +23,7 @@ const Register = () => {
         navigate("/login");
       })
       .catch((error) => {
-        //console.log(error);
+        console.log(error);
         toast.error(error.response.data.message);
       });
     setUserName("");

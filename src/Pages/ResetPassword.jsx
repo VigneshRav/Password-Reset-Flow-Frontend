@@ -13,7 +13,7 @@ const ResetPassword = () => {
     e.preventDefault();
     await axios
       .post(
-        `https://password-reset-flow-backend-uj3q.onrender.com/api/user/reset-password/${id}/${token}`,
+        `https://password-reset-flow-backend-uj3q.onrender.com/api/auth/reset-password/${id}/${token}`,
         { password }
       )
       //to handle response and errors

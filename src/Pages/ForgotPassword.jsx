@@ -11,7 +11,7 @@ const ForgotPassword = () => {
     e.preventDefault();
     await axios
       .post(
-        "https://password-reset-flow-backend-uj3q.onrender.com/api/user/forgot-password",
+        "https://password-reset-flow-backend-uj3q.onrender.com/api/auth/forgot-password",
         { email }
       )
       //to handle response and errors
@@ -25,8 +25,8 @@ const ForgotPassword = () => {
       });
   };
   return (
-    <div className="container vh-100 mw-100 d-flex justify-content-center align-content-center border bg-primary-subtle">
-      <div className=" d-flex h-75 w-75 flex-column  justify-content-center shadow-sm  my-auto border rounded-3 bg-white">
+    <div className="container vh-100 mw-100 d-flex justify-content-center align-content-center  border border-2 bg-primary-subtle">
+      <div className=" d-flex h-75 w-75 flex-column  justify-content-center shadow-sm  my-auto border-2 border rounded-3 bg-white">
         <form
           onSubmit={handleSubmit}
           className="container d-grid justify-content-center"
